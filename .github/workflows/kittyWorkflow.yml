@@ -1,0 +1,21 @@
+name: cats workflow CI/CD
+
+on:
+  push:
+    branches:
+      - main  # Trigger workflow on push to main branch
+
+jobs:
+ checkout_and_echo:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2  # Checkout the repository
+
+    - name: Echo a message
+      run: |
+        echo "This is an example workflow."
+        echo "Repository checked out successfully."
+
+    - name: Another echo step
+      run: echo "Hello, world!"
